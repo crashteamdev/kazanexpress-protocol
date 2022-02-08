@@ -112,12 +112,10 @@ message ProductCategory {
 
 message ProductBadges {
   int64 id = 1;
-  string background_color = 2;
-  string description = 3;
-  string link = 4;
-  string text = 5;
-  string text_color = 6;
-  string text_type = 7;
+  string description = 2;
+  string link = 3;
+  string text = 4;
+  string text_type = 5;
 }
 
 message ProductFetch {
@@ -140,7 +138,7 @@ message BrandFetch {
   repeated int64 product_id = 4;
 }
 
-message FetchEvent {
+message FetchKazanExpressEvent {
   string created_at = 1;
   oneof event {
     ProductFetch product_fetch = 2;
