@@ -29,7 +29,7 @@ message ProductSku {
   int64 id = 1;
   int64 available_amount = 2;
   int64 barcode = 3;
-  ProductSkuCharacteristic characteristic = 4;
+  repeated ProductSkuCharacteristic characteristic = 4;
   int32 charity_profit = 5;
   ProductSkuDiscountBadge discount_badge = 6;
   int64 full_price = 7;
