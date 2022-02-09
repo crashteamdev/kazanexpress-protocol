@@ -9,6 +9,7 @@ option java_multiple_files = true;
 message Product {
   string id = 1;
   string title = 2;
+  int64 category_id = 16;
   repeated string attributes = 3;
   repeated ProductBadges badges = 4;
   int64 review_amount = 5;
@@ -107,7 +108,9 @@ message ProductCategory {
   int64 id = 1;
   string title = 2;
   string product_amount = 3;
-  ProductCategory parent_category = 4;
+  bool adult = 4;
+  bool eco = 5;
+  ProductCategory child = 6;
 }
 
 message ProductBadges {
@@ -120,9 +123,12 @@ message ProductBadges {
 
 message ProductFetch {
   Product product = 1;
-  ProductCategory category = 2;
-  ProductSeller seller = 3;
-  repeated ProductReview reviews = 4;
+  ProductSeller seller = 2;
+  repeated ProductReview reviews = 3;
+}
+
+message CategoryFetch {
+    ProductCategory category = 1;
 }
 
 message ProductCategoryPositionFetch {
@@ -144,5 +150,6 @@ message FetchKazanExpressEvent {
     ProductFetch product_fetch = 2;
     ProductCategoryPositionFetch product_position_fetch = 3;
     BrandFetch brand_fetch = 4;
+    CategoryFetch category_fetch = 5;
   }
 }
