@@ -88,7 +88,7 @@ message ProductSeller {
   int64 registration_date = 5;
   int64 reviews = 6;
   int64 account_id = 7;
-  int64 title = 8;
+  string title = 8;
   string ogrnip = 9;
   string account_name = 10;
 }
