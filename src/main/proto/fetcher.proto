@@ -11,7 +11,7 @@ option java_multiple_files = true;
 message ProductFetch {
   google.protobuf.Struct product = 1;
   google.protobuf.Struct seller = 2;
-  google.protobuf.Struct reviews = 3;
+  google.protobuf.ListValue reviews = 3;
 }
 
 message CategoryFetch {
