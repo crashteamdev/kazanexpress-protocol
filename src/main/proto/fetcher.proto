@@ -26,6 +26,8 @@ message ProductCategoryPositionFetch {
 
 message BrandFetch {
   google.protobuf.Struct brand = 1;
+  int64 category_id = 2;
+  repeated int64 product_ids = 3;
 }
 
 message FetchKazanExpressEvent {
