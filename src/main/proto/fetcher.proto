@@ -3,6 +3,7 @@ syntax = "proto3";
 package fetcher;
 
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
 
 option java_package = "dev.crashteam.kz.fetcher";
 option java_outer_classname = "KazanExpressFetcherProto";
@@ -12,26 +13,30 @@ message ProductFetch {
   google.protobuf.Struct product = 1;
   google.protobuf.Struct seller = 2;
   google.protobuf.ListValue reviews = 3;
+  google.protobuf.Timestamp fetch_time = 4;
 }
 
 message CategoryFetch {
   google.protobuf.ListValue categories = 1;
+  google.protobuf.Timestamp fetch_time = 2;
 }
 
 message ProductCategoryPositionFetch {
   int64 product_id = 1;
   int64 category_id = 2;
   int64 position = 3;
+  google.protobuf.Timestamp fetch_time = 4;
 }
 
 message BrandFetch {
   google.protobuf.Struct brand = 1;
   int64 category_id = 2;
   repeated int64 product_ids = 3;
+  google.protobuf.Timestamp fetch_time = 4;
 }
 
 message FetchKazanExpressEvent {
-  string created_at = 1;
+  google.protobuf.Timestamp created_at = 1;
   oneof fetch_event {
     ProductFetch product_fetch = 2;
     ProductCategoryPositionFetch product_position_fetch = 3;
