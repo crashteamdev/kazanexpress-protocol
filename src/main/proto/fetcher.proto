@@ -17,7 +17,7 @@ message ProductFetch {
 }
 
 message CategoryFetch {
-  google.protobuf.ListValue categories = 1;
+  google.protobuf.Struct category = 1;
   google.protobuf.Timestamp fetch_time = 2;
 }
 
